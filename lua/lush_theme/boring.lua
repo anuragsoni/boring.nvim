@@ -240,8 +240,8 @@ local theme = lush(function(injected_functions)
     -- sym"@text.todo"         { }, -- Todo
     -- sym"@comment"           { }, -- Comment
     -- sym"@punctuation"       { }, -- Delimiter
-    sym "@punctuation.delimiter" { gui = "bold" },
-    sym "@punctuation.special" { gui = "bold" },
+    sym("@punctuation.delimiter") { gui = "bold" },
+    sym("@punctuation.special") { gui = "bold" },
     -- sym"@constant"          { }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
     -- sym"@constant.macro"    { }, -- Define
@@ -268,12 +268,12 @@ local theme = lush(function(injected_functions)
     -- sym"@label"             { }, -- Label
     -- sym"@operator"          { }, -- Operator
     -- sym"@keyword"           { }, -- Keyword
-    sym "@text.strong" { gui = "bold" },
-    sym "@text.emphasis" { gui = "italic" },
+    sym("@text.strong") { gui = "bold" },
+    sym("@text.emphasis") { gui = "italic" },
     sym "@exception" { gui = "bold" },        -- Exception
     -- sym"@variable"          { }, -- Identifier
     -- sym"@type"              { }, -- Type
-    sym "@type.qualifier" { gui = "bold" },
+    sym("@type.qualifier") { gui = "bold" },
     -- sym"@type.definition"   { }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
