@@ -215,6 +215,13 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
     -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
 
+    -- Nvim-notify
+    NotifyINFOTitle { fg = green },
+    NotifyINFOIcon { fg = green },
+    NotifyWARNTitle { fg = warning },
+    NotifyWARNIcon { fg = warning },
+    NotifyERRORIcon { fg = red },
+    NotifyERRORTitle { fg = red },
     -- Tree-Sitter syntax groups.
     --
     -- See :h treesitter-highlight-groups, some groups may not be listed,
