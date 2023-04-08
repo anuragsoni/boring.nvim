@@ -89,7 +89,7 @@ local theme = lush(function(injected_functions)
     ErrorMsg { fg = red },                          -- Error messages on the command line
     -- VertSplit    { }, -- Column separating vertically split windows
     Folded { bg = ColorColumn.bg.darken(2) },       -- Line used for closed folds
-    -- FoldColumn   { }, -- 'foldcolumn'
+    FoldColumn   { bg = Normal.bg }, -- 'foldcolumn'
     SignColumn { bg = Normal.bg },                  -- Column where |signs| are displayed
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
