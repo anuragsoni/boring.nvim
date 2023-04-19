@@ -150,7 +150,7 @@ local theme = lush(function(injected_functions)
 
     Statement {},                                   -- (*) Any statement
     Conditional { gui = "bold" },                   --   if, then, else, endif, switch, etc.
-    Repeat {},                                      --   for, do, while, etc.
+    Repeat { gui = "bold" },                                      --   for, do, while, etc.
     Label {},                                       --   case, default, etc.
     Keyword { gui = "bold" },                       --   any other keyword
     Operator { gui = Keyword.gui },                 --   "sizeof", "+", "*", etc.
