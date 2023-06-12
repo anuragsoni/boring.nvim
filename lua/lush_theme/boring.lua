@@ -285,6 +285,7 @@ local theme = lush(function(injected_functions)
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
     sym"@namespace.ocaml"         { gui = "bold" }, -- Identifier
+    sym"@namespace.ocaml_interface"         { gui = "bold" }, -- Identifier
     -- sym"@include"           { }, -- Include
     -- sym"@preproc"           { }, -- PreProc
     -- sym"@debug"             { }, -- Debug
