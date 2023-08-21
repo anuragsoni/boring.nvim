@@ -71,6 +71,7 @@ local theme = lush(function(injected_functions)
     -- See :h highlight-groups
     --
     Normal { bg = norm_bg, fg = norm_fg },                   -- Normal text
+    NormalFloat { Normal },
     ColorColumn { bg = Normal.bg.saturation(0).darken(5) },  -- Columns set with 'colorcolumn'
     -- Conceal      { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- Character under the cursor
