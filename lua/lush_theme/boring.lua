@@ -249,8 +249,6 @@ local theme = lush(function(injected_functions)
     -- sym"@text.todo"         { }, -- Todo
     -- sym"@comment"           { }, -- Comment
     -- sym"@punctuation"       { }, -- Delimiter
-    sym("@punctuation.delimiter") { gui = "bold" },
-    sym("@punctuation.special") { gui = "bold" },
     -- sym"@constant"          { }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
     -- sym"@constant.macro"    { }, -- Define
@@ -286,8 +284,8 @@ local theme = lush(function(injected_functions)
     -- sym"@type.definition"   { }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
-    sym"@namespace.ocaml"         { gui = "bold" }, -- Identifier
-    sym"@namespace.ocaml_interface"         { gui = "bold" }, -- Identifier
+    -- sym"@namespace.ocaml"         { gui = "bold" }, -- Identifier
+    -- sym"@namespace.ocaml_interface"         { gui = "bold" }, -- Identifier
     -- sym"@include"           { }, -- Include
     -- sym"@preproc"           { }, -- PreProc
     -- sym"@debug"             { }, -- Debug
