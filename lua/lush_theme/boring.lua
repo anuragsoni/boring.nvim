@@ -224,6 +224,11 @@ local theme = lush(function(injected_functions)
     NotifyWARNIcon { fg = warning },
     NotifyERRORIcon { fg = red },
     NotifyERRORTitle { fg = red },
+
+    -- Indent blankline
+    IblIndent { fg = Normal.fg.lighten(70).desaturate(50) },
+    IblScope { gui = "underline" },
+
     -- Tree-Sitter syntax groups.
     --
     -- See :h treesitter-highlight-groups, some groups may not be listed,
