@@ -48,7 +48,7 @@ local lush = require('lush')
 local hsl = lush.hsl
 local hsluv = lush.hsluv
 local norm_fg = hsluv('#000000')
-local norm_bg = hsluv('#f7f7f7')
+local norm_bg = hsluv('#ffffff')
 local red = hsluv('#a31515')
 local green = hsluv('#006100')
 local blue = hsluv('#175297')
@@ -70,43 +70,43 @@ local theme = lush(function(injected_functions)
     --
     -- See :h highlight-groups
     --
-    Normal { bg = norm_bg, fg = norm_fg },                   -- Normal text
+    Normal { bg = norm_bg, fg = norm_fg },                  -- Normal text
     NormalFloat { Normal },
-    ColorColumn { bg = Normal.bg.saturation(0).darken(5) },  -- Columns set with 'colorcolumn'
+    ColorColumn { bg = Normal.bg.saturation(0).darken(5) }, -- Columns set with 'colorcolumn'
     -- Conceal      { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- Character under the cursor
     -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = ColorColumn.bg },                                  -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine { CursorColumn },                                           -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory { fg = blue },                                               -- Directory names (and other special names in listings)
-    DiffAdd { bg = green.saturation(30).lightness(Normal.bg.l - 6) },      -- Diff mode: Added line |diff.txt|
-    DiffChange { bg = blue.saturation(40).lightness(Normal.bg.l - 6) },    -- Diff mode: Changed line |diff.txt|
-    DiffDelete { bg = red.saturation(40).lightness(Normal.bg.l - 6) },     -- Diff mode: Deleted line |diff.txt|
-    DiffText { bg = blue.saturation(50).lightness(Normal.bg.l - 18) },     -- Diff mode: Changed text within a changed line |diff.txt|
+    CursorColumn { bg = ColorColumn.bg },                               -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine { CursorColumn },                                        -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    Directory { fg = blue },                                            -- Directory names (and other special names in listings)
+    DiffAdd { bg = green.saturation(30).lightness(Normal.bg.l - 6) },   -- Diff mode: Added line |diff.txt|
+    DiffChange { bg = blue.saturation(40).lightness(Normal.bg.l - 6) }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete { bg = red.saturation(40).lightness(Normal.bg.l - 6) },  -- Diff mode: Deleted line |diff.txt|
+    DiffText { bg = blue.saturation(50).lightness(Normal.bg.l - 18) },  -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer  { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
-    ErrorMsg { fg = red },                          -- Error messages on the command line
+    ErrorMsg { fg = red },                    -- Error messages on the command line
     -- VertSplit    { }, -- Column separating vertically split windows
-    Folded { bg = ColorColumn.bg.darken(2) },       -- Line used for closed folds
-    FoldColumn   { bg = Normal.bg }, -- 'foldcolumn'
-    SignColumn { bg = Normal.bg },                  -- Column where |signs| are displayed
+    Folded { bg = ColorColumn.bg.darken(2) }, -- Line used for closed folds
+    FoldColumn { bg = Normal.bg },            -- 'foldcolumn'
+    SignColumn { bg = Normal.bg },            -- Column where |signs| are displayed
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    LineNr { bg = Normal.bg, fg = Normal.bg.saturation(0).darken(60) },       -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr { bg = Normal.bg, fg = Normal.fg, gui = "bold" },            -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNr { bg = Normal.bg, fg = Normal.bg.saturation(0).darken(60) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    CursorLineNr { bg = Normal.bg, fg = Normal.fg, gui = "bold" },      -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- MatchParen   { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
-    NonText { fg = Normal.bg.saturation(10).darken(20) },      -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    NonText { fg = Normal.bg.saturation(10).darken(20) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu { bg = Normal.bg.saturation(10).darken(5) },         -- Popup menu: Normal item.
-    PmenuSel { bg = Normal.bg.saturation(10).darken(10) },     -- Popup menu: Selected item.
-    PmenuSbar { bg = Normal.bg.saturation(10).darken(20) },    -- Popup menu: Scrollbar.
+    Pmenu { bg = Normal.bg.saturation(10).darken(5) },      -- Popup menu: Normal item.
+    PmenuSel { bg = Normal.bg.saturation(10).darken(10) },  -- Popup menu: Selected item.
+    PmenuSbar { bg = Normal.bg.saturation(10).darken(20) }, -- Popup menu: Scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
@@ -120,15 +120,15 @@ local theme = lush(function(injected_functions)
     -- TabLine      { }, -- Tab pages line, not active tab page label
     -- TabLineFill  { }, -- Tab pages line, where there are no labels
     -- TabLineSel   { }, -- Tab pages line, active tab page label
-    Title { gui = "bold" },                -- Titles for output from ":set all", ":autocmd" etc.
-    Visual { bg = CursorColumn.bg },       -- Visual mode selection
+    Title { gui = "bold" },          -- Titles for output from ":set all", ":autocmd" etc.
+    Visual { bg = CursorColumn.bg }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg { fg = warning },           -- Warning messages
+    WarningMsg { fg = warning },     -- Warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     -- WildMenu     { }, -- Current match in 'wildmenu' completion
     CurSearch { bg = "#FFFF00" },
-    Search       { CurSearch }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search { CurSearch },       -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
@@ -138,47 +138,47 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment { fg = green },                         -- Any comment
+    Comment { fg = green },                -- Any comment
 
-    Constant {},                                    -- (*) Any constant
-    String { fg = red },                            --   A string constant: "this is a string"
-    Character { String },                           --   A character constant: 'c', '\n'
-    Number {},                                      --   A number constant: 234, 0xff
-    Boolean {},                                     --   A boolean constant: TRUE, false
-    Float {},                                       --   A floating point constant: 2.3e10
+    Constant {},                           -- (*) Any constant
+    String { fg = red },                   --   A string constant: "this is a string"
+    Character { String },                  --   A character constant: 'c', '\n'
+    Number {},                             --   A number constant: 234, 0xff
+    Boolean {},                            --   A boolean constant: TRUE, false
+    Float {},                              --   A floating point constant: 2.3e10
 
-    Identifier {},                                  -- (*) Any variable name
-    Function {},                                    --   Function name (also: methods for classes)
+    Identifier {},                         -- (*) Any variable name
+    Function {},                           --   Function name (also: methods for classes)
 
-    Statement {},                                   -- (*) Any statement
-    Conditional { gui = "bold" },                   --   if, then, else, endif, switch, etc.
-    Repeat { gui = "bold" },                                      --   for, do, while, etc.
-    Label {},                                       --   case, default, etc.
-    Keyword { gui = "bold" },                       --   any other keyword
-    Operator { gui = Keyword.gui },                 --   "sizeof", "+", "*", etc.
-    Exception {},                                   --   try, catch, throw
+    Statement {},                          -- (*) Any statement
+    Conditional { gui = "bold" },          --   if, then, else, endif, switch, etc.
+    Repeat { gui = "bold" },               --   for, do, while, etc.
+    Label {},                              --   case, default, etc.
+    Keyword { gui = "bold" },              --   any other keyword
+    Operator { gui = Keyword.gui },        --   "sizeof", "+", "*", etc.
+    Exception {},                          --   try, catch, throw
 
-    PreProc {},                                     -- (*) Generic Preprocessor
-    Include { gui = "bold" },                       --   Preprocessor #include
-    Define {},                                      --   Preprocessor #define
-    Macro {},                                       --   Same as Define
-    PreCondit {},                                   --   Preprocessor #if, #else, #endif, etc.
+    PreProc {},                            -- (*) Generic Preprocessor
+    Include { gui = "bold" },              --   Preprocessor #include
+    Define {},                             --   Preprocessor #define
+    Macro {},                              --   Same as Define
+    PreCondit {},                          --   Preprocessor #if, #else, #endif, etc.
 
-    Type {},                                        -- (*) int, long, char, etc.
-    StorageClass {},                                --   static, register, volatile, etc.
-    Structure {},                                   --   struct, union, enum, etc.
-    Typedef {},                                     --   A typedef
+    Type {},                               -- (*) int, long, char, etc.
+    StorageClass {},                       --   static, register, volatile, etc.
+    Structure {},                          --   struct, union, enum, etc.
+    Typedef {},                            --   A typedef
 
-    Special {},                                     -- (*) Any special symbol
-    SpecialChar {},                                 --   Special character in a constant
-    Tag {},                                         --   You can use CTRL-] on this
-    Delimiter {},                                   --   Character that needs attention
-    SpecialComment {},                              --   Special things inside a comment (e.g. '\n')
-    Debug {},                                       --   Debugging statements
+    Special {},                            -- (*) Any special symbol
+    SpecialChar {},                        --   Special character in a constant
+    Tag {},                                --   You can use CTRL-] on this
+    Delimiter {},                          --   Character that needs attention
+    SpecialComment {},                     --   Special things inside a comment (e.g. '\n')
+    Debug {},                              --   Debugging statements
 
-    Underlined { gui = "underline" },               -- Text that stands out, HTML links
+    Underlined { gui = "underline" },      -- Text that stands out, HTML links
     -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error { ErrorMsg, gui = "underline" },          -- Any erroneous construct
+    Error { ErrorMsg, gui = "underline" }, -- Any erroneous construct
     -- Todo           { }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client and diagnostic system. Some
@@ -190,16 +190,16 @@ local theme = lush(function(injected_functions)
     -- LspReferenceText            { } , -- Used for highlighting "text" references
     -- LspReferenceRead            { } , -- Used for highlighting "read" references
     -- LspReferenceWrite           { } , -- Used for highlighting "write" references
-    LspCodeLens { bg = Normal.bg.saturation(10).darken(5), fg = Normal.fg.lighten(20) },                  -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
+    LspCodeLens { bg = Normal.bg.saturation(10).darken(5), fg = Normal.fg.lighten(20) }, -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
     -- LspCodeLensSeparator        { } , -- Used to color the seperator between two or more code lens.
     -- LspSignatureActiveParameter { } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
 
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
-    DiagnosticError { ErrorMsg },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticWarn { fg = warning },              -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo { fg = blue },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint { LspCodeLens },               -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticError { ErrorMsg },    -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn { fg = warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo { fg = blue },    -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint { LspCodeLens },  -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -282,7 +282,7 @@ local theme = lush(function(injected_functions)
     -- sym"@keyword"           { }, -- Keyword
     sym("@text.strong") { gui = "bold" },
     sym("@text.emphasis") { gui = "italic" },
-    sym "@exception" { gui = "bold" },        -- Exception
+    sym "@exception" { gui = "bold" }, -- Exception
     -- sym"@variable"          { }, -- Identifier
     -- sym"@type"              { }, -- Type
     sym("@type.qualifier") { gui = "bold" },
